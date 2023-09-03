@@ -1,0 +1,45 @@
+#root {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+#header {
+  margin-bottom: 4rem;
+}
+#todoform {
+  margin-bottom: 2rem;
+}
+
+#todolist {
+  margin-bottom: 2rem;
+}
+
+.card {
+  color: black;
+  background-color: #a7a4a4;
+  margin: 3.2rem auto;
+  max-width: 24rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  box-shadow: 0.2rem 0.2rem 0.6rem #bdbdbd;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.2rem;
+}
+
+#submit {
+  margin-top: 0.6rem;
+}
