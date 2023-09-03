@@ -23,9 +23,7 @@ function App() {
         return item;
       });
       setTodos((prev) => newTodos);
-      setEditTodo((prev) => {
-        return {};
-      });
+      setEditTodo((prev) => ({}));
     } else {
       ID.id++;
       const todo = { id: ID.id, completed: false, title: title, desc: desc };
@@ -57,6 +55,10 @@ function App() {
     setTodos((prev) => newTodos);
   };
 
+  const removeCompletedTodos = () => {
+    const newTodos = todos.filter((item) => item.completed !== true);
+    setTodos((prev) => newTodos);
+  };
   return (
     <>
       <Header />
@@ -73,7 +75,7 @@ function App() {
         handleDelete={handleDelete}
         handleComplete={handleComplete}
       />
-
+      <button onClick={removeCompletedTodos}>Remove Completed</button>
       <Footer />
     </>
   );
