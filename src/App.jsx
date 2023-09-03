@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import Footer from "./components/Footer";
+import { removeCompletedTodos } from "./utils/operations";
 
 const ID = { id: 101 };
 
@@ -55,10 +56,6 @@ function App() {
     setTodos((prev) => newTodos);
   };
 
-  const removeCompletedTodos = () => {
-    const newTodos = todos.filter((item) => item.completed !== true);
-    setTodos((prev) => newTodos);
-  };
   return (
     <>
       <Header />
@@ -75,7 +72,9 @@ function App() {
         handleDelete={handleDelete}
         handleComplete={handleComplete}
       />
-      <button onClick={removeCompletedTodos}>Remove Completed</button>
+      <button onClick={() => removeCompletedTodos(todos, setTodos)}>
+        Remove Completed
+      </button>
       <Footer />
     </>
   );
